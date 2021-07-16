@@ -1,0 +1,1 @@
+PYTHONPATH=./build python3 -m gen.allgen
