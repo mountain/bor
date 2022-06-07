@@ -1,33 +1,32 @@
-# -*- coding: utf-8 -*-
+import argparse
 
-import os
-
-from gen.constant import sizes, fontnames
+import os.path as pth
 
 
-template = '''
-\\documentclass[48pt]{article}
-\\usepackage{pifont}
-\\usepackage{mathptmx}
-\\usepackage{anyfontsize}
-\\usepackage{t1enc}
-\\usepackage[paperwidth=1.5in, paperheight=1.5in]{geometry}
+text = '''\\documentclass{article}
+\\usepackage[paperwidth=1.618in, paperheight=1in]{geometry}
+\\newfont{\\bongbaletter}{beta}
+\\newcommand{\\bongbabeta}{{\\bongbaletter B}}
 
-\\DeclareFontFamily{U}{astrosym}{}
-\\DeclareFontShape{U}{astrosym}{m}{n}{<-> astrosym}{}
 \\begin{document}
-\\begin{center}
-{\\fontsize{%i}{0} \\Pisymbol{%s}{%i}}
-\\end{center}
 \\thispagestyle{empty}
-\\end{document}
-'''
+\\hspace{0pt}\\vfill
+\\begin{center}
+\\bongbabeta\\
+\\end{center}
+\\vfill\hspace{0pt}
+\\end{document}'''
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-d", "--output-directory", type=str, default='.', help="output directory")
+parser.add_argument("input_file")
+opt = parser.parse_args()
 
-def content(fontname, charindex, fontsize):
-    return template % (fontsize, fontname, charindex)
+outfile = pth.basename(opt.input_file).replace('600pk', 'tex')
+outdir = opt.output_directory
+outfile = pth.join(outdir, outfile)
 
-
-def tex(texfile, fntname, chridx, size):
-    with open(texfile, 'w') as f:
-        f.write(content(fntname, chridx, size))
+if __name__ == '__main__':
+    with open(outfile, 'w') as f:
+        f.write(text)
+        f.flush()

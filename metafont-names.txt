@@ -1,4 +1,0 @@
-./metafont/dongba/actn.mf
-./metafont/dongba/humn.mf
-./metafont/dongba/numr.mf
-./metafont/dongba/tool.mf

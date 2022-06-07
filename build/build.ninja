@@ -1,0 +1,40 @@
+rule mf
+  command = mf '\mode=ljfour; mode_setup; input $in'
+
+rule gftopk
+  command = gftopk $in $out
+
+rule texgen
+  command = PYTHONPATH=../build python3 -m gen.texgen $in
+
+rule pdflatex
+  command = pdflatex $in
+
+rule convert
+  command = convert -density 300 -trim -monochrome -white-threshold 50% -black-threshold 50% $in -quality 100 -gravity center -extent 160x160 -transparent white $out
+
+rule resize-huge
+  command = convert $in -resize 48x48 $out
+
+rule resize-large
+  command = convert $in -resize 42x42 $out
+
+rule resize-normal
+  command = convert $in -resize 36x36 $out
+
+rule resize-small
+  command = convert $in -resize 30x30 $out
+
+rule resize-tiny
+  command = convert $in -resize 24x24 $out
+
+build beta.600gf: mf ../metafont/beta.mf
+build beta.600pk: gftopk beta.600gf
+build beta.tex: texgen beta.600pk
+build beta.pdf: pdflatex beta.tex
+build beta.og.png: convert beta.pdf
+build beta.hg.png: resize-huge beta.og.png
+build beta.lg.png: resize-large beta.og.png
+build beta.nm.png: resize-normal beta.og.png
+build beta.sm.png: resize-small beta.og.png
+build beta.tn.png: resize-tiny beta.og.png
