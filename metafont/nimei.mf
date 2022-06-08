@@ -1,0 +1,49 @@
+%file name: sun.mf
+%mode_setup;
+% Define a circle-like shape for the character O
+% Denote the sun
+
+beginchar("nimei",11pt#,11pt#,0);
+  % Setup coordinates as an equation system
+  % with twelve point
+
+  % the big circle
+  x1 = x3 = 0;
+  y1 = + h;
+  y3 = - h;
+  y2 = y4 = 0;
+  x2 = + w * 1.618;
+  x4 = - w * 1.618;
+
+  % the smallest inner circle
+  x5 = x7 = 0;
+  y5 = + h / 5;
+  y7 = - h / 5;
+  y6 = y8 = 0;
+  x6 = + w / 5 * 1.618;
+  x8 = - w / 5 * 1.618;
+
+  % the twisted smaller inner circle
+  x9 = (x1 + x5) / 2 - 30;
+  x10 = (x2 + x6) / 2;
+  x11 = (x3 + x7) / 2 + 30;
+  x12 = (x4 + x8) / 2;
+  y9 = (y1 + y5) / 2;
+  y10 = (y2 + y6) / 2 + 30;
+  y11 = (y3 + y7) / 2;
+  y12 = (y4 + y8) / 2 - 30;
+
+  % Define pen
+  pickup pencircle xscaled 0.2w yscaled 0.04w rotated 45;
+
+  % Draw the character curve
+  % z1 is the same as (x1, y1)
+  draw z1..z2..z3..z4..cycle;
+  draw z5..z6..z7..z8..cycle;
+  draw z1..z9..z5;
+  draw z6..z10..z2;
+  draw z3..z11..z7;
+  draw z4..z12..z8;
+endchar;
+
+end
