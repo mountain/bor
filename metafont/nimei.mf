@@ -1,11 +1,11 @@
-%file name: sun.mf
+%file name: nimei.mf
 %mode_setup;
 % Define a circle-like shape for the character O
-% Denote the sun
+% Denote the nimei (sun, 太阳)
 
 beginchar("nimei",11pt#,11pt#,0);
   % Setup coordinates as an equation system
-  % with twelve point
+  % with 12 points
 
   % the big circle
   x1 = x3 = 0;

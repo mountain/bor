@@ -28,13 +28,13 @@ rule resize-small
 rule resize-tiny
   command = convert $in -resize 24x24 $out
 
-build nimei.600gf: mf ../metafont/nimei.mf
-build nimei.600pk: gftopk nimei.600gf
-build nimei.tex: texgen nimei.600pk
-build nimei.pdf: pdflatex nimei.tex
-build nimei.og.png: convert nimei.pdf
-build nimei.hg.png: resize-huge nimei.og.png
-build nimei.lg.png: resize-large nimei.og.png
-build nimei.nm.png: resize-normal nimei.og.png
-build nimei.sm.png: resize-small nimei.og.png
-build nimei.tn.png: resize-tiny nimei.og.png
+build dui.600gf: mf ../metafont/dui.mf
+build dui.600pk: gftopk dui.600gf
+build dui.tex: texgen dui.600pk
+build dui.pdf: pdflatex dui.tex
+build dui.og.png: convert dui.pdf
+build dui.hg.png: resize-huge dui.og.png
+build dui.lg.png: resize-large dui.og.png
+build dui.nm.png: resize-normal dui.og.png
+build dui.sm.png: resize-small dui.og.png
+build dui.tn.png: resize-tiny dui.og.png

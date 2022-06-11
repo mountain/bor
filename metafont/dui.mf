@@ -1,0 +1,45 @@
+%file name: dui.mf
+%mode_setup;
+% Define a circle-like shape for the character O
+% Denote the dui (earth, 大地)
+
+beginchar("dui",11pt#,11pt#,0);
+  % Setup coordinates as an equation system
+  % with 16 points
+
+  % the 6 points on the top line
+  x1 = - w * 1.5;
+  x2 = - w * 0.9;
+  x3 = - w * 0.5;
+  x4 = + w * 0.5;
+  x5 = + w * 0.9;
+  x6 = + w * 1.5;
+  y1 = y2 = y3 = y4 = y5 = y6 = h;
+
+  % the 8 points on the bottom line
+  x7 = - w * 1.618;
+  x8 = - w * 1.4;
+  x9 = - w * 0.8;
+  x10 = - w * 0.4;
+  x11 = + w * 0.4;
+  x12 = + w * 0.8;
+  x13 = + w * 1.4;
+  x14 = + w * 1.618;
+  y7 = y8 = y9 = y10 = y11 = y12 = y13 = y14 = 0;
+
+  % Define pen
+  pickup pencircle xscaled 0.2w yscaled 0.04w rotated 45;
+
+  % Draw the character curve
+  % z1 is the same as (x1, y1)
+  draw z1..z2..z3..z4..z5..z6;
+  draw z7..z8..z9..z10..z11..z12..z13..z14;
+  draw z1..z8;
+  draw z2..z9;
+  draw z3..z10;
+  draw z4..z11;
+  draw z5..z12;
+  draw z6..z13;
+endchar;
+
+end

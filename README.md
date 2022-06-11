@@ -17,6 +17,10 @@ nimei means sun in English.
 
 ![nimei](https://raw.githubusercontent.com/mountain/bor/main/glyph/nimei.og.png)
 
+dui means earth in English.
+
+![dui](https://raw.githubusercontent.com/mountain/bor/main/glyph/dui.og.png)
+
 ## development
 
 texlive for metafont and tex processing; python for programming; ninja for building.

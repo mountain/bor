@@ -5,14 +5,14 @@ import os.path as pth
 
 text = '''\\documentclass{article}
 \\usepackage[paperwidth=1.618in, paperheight=1in]{geometry}
-\\newfont{\\bongbaletter}{nimei}
-\\newcommand{\\nimei}{{\\bongbaletter nimei}}
+\\newfont{\\bongbaletter}{dui}
+\\newcommand{\\dui}{{\\bongbaletter dui}}
 
 \\begin{document}
 \\thispagestyle{empty}
 \\hspace{0pt}\\vfill
 \\begin{center}
-\\nimei\\
+\\dui\\
 \\end{center}
 \\vfill\hspace{0pt}
 \\end{document}'''
