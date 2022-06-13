@@ -13,11 +13,11 @@ bor is an amateur project when I want to relax myself during the busy days.
 
 ### nimei
 
-nimei means sun in English.
+nimei means sun.
 
 ![nimei](https://raw.githubusercontent.com/mountain/bor/main/glyph/nimei.og.png)
 
-dui means earth in English.
+dui means earth.
 
 ![dui](https://raw.githubusercontent.com/mountain/bor/main/glyph/dui.og.png)
 
